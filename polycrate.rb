@@ -5,21 +5,21 @@
 class Polycrate < Formula
   desc "Polycrate is a framework to build platforms."
   homepage "https://www.ayedo.de/"
-  version "0.7.3"
+  version "0.7.4"
   license "Apache 2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/polycrate/polycrate/releases/download/v0.7.3/polycrate_0.7.3_darwin_arm64.tar.gz"
-      sha256 "c4114890cdea28df0caa5841bb7265f650f6a777bed4c35c23af8dc82aafd9f8"
+      url "https://github.com/polycrate/polycrate/releases/download/v0.7.4/polycrate_0.7.4_darwin_arm64.tar.gz"
+      sha256 "86ae82ae86dd4af428c5a98d2f1081ffb3879214c417fcd8f08e349872c0605b"
 
       def install
         bin.install "polycrate"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/polycrate/polycrate/releases/download/v0.7.3/polycrate_0.7.3_darwin_amd64.tar.gz"
-      sha256 "dadb66741c50f37c05aaeab5a3ba439bb4f8c507240137b3bc11a3b944c61858"
+      url "https://github.com/polycrate/polycrate/releases/download/v0.7.4/polycrate_0.7.4_darwin_amd64.tar.gz"
+      sha256 "f6b72d0e482188ef5eedea389b3338299b8bd3163740705c86a5c67de0690c09"
 
       def install
         bin.install "polycrate"
@@ -28,17 +28,17 @@ class Polycrate < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/polycrate/polycrate/releases/download/v0.7.3/polycrate_0.7.3_linux_arm64.tar.gz"
-      sha256 "f0f907fd0f1c645caf1e0bf51d829a66b38ad9035447da4d7f5b4b644931bfb6"
+    if Hardware::CPU.intel?
+      url "https://github.com/polycrate/polycrate/releases/download/v0.7.4/polycrate_0.7.4_linux_amd64.tar.gz"
+      sha256 "7235da300da496da54ecef597ed53801a665c68aeb58df3b5bb50d94d303cd45"
 
       def install
         bin.install "polycrate"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/polycrate/polycrate/releases/download/v0.7.3/polycrate_0.7.3_linux_amd64.tar.gz"
-      sha256 "b644e4f7d2bf2bcf38810e10b6441aaf6bccf41155d46afdc3e49aed6d25c7ab"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/polycrate/polycrate/releases/download/v0.7.4/polycrate_0.7.4_linux_arm64.tar.gz"
+      sha256 "feaaef3aca5f143e003af6efe359f2f14e4044eca3aa637c62a407d5869a8a58"
 
       def install
         bin.install "polycrate"
