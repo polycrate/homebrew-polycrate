@@ -5,21 +5,21 @@
 class Polycrate < Formula
   desc "Polycrate is a framework to build platforms."
   homepage "https://www.ayedo.de/"
-  version "0.7.4"
+  version "0.7.5"
   license "Apache 2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/polycrate/polycrate/releases/download/v0.7.4/polycrate_0.7.4_darwin_arm64.tar.gz"
-      sha256 "86ae82ae86dd4af428c5a98d2f1081ffb3879214c417fcd8f08e349872c0605b"
+      url "https://github.com/polycrate/polycrate/releases/download/v0.7.5/polycrate_0.7.5_darwin_arm64.tar.gz"
+      sha256 "43a72e431e1e3175260c31c4d956b1da453290f998f1ed1ca1bc96c1a4ceb5f7"
 
       def install
         bin.install "polycrate"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/polycrate/polycrate/releases/download/v0.7.4/polycrate_0.7.4_darwin_amd64.tar.gz"
-      sha256 "f6b72d0e482188ef5eedea389b3338299b8bd3163740705c86a5c67de0690c09"
+      url "https://github.com/polycrate/polycrate/releases/download/v0.7.5/polycrate_0.7.5_darwin_amd64.tar.gz"
+      sha256 "6557c02b1ccd05517b047f05241ba6a6507d02f26ad9f22e83a4932285258c43"
 
       def install
         bin.install "polycrate"
@@ -28,17 +28,17 @@ class Polycrate < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/polycrate/polycrate/releases/download/v0.7.4/polycrate_0.7.4_linux_amd64.tar.gz"
-      sha256 "7235da300da496da54ecef597ed53801a665c68aeb58df3b5bb50d94d303cd45"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/polycrate/polycrate/releases/download/v0.7.5/polycrate_0.7.5_linux_arm64.tar.gz"
+      sha256 "a2a4f62f459437dc2316683acdfde1e93338d0fc7e16e35d7405c773bc77dbc7"
 
       def install
         bin.install "polycrate"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/polycrate/polycrate/releases/download/v0.7.4/polycrate_0.7.4_linux_arm64.tar.gz"
-      sha256 "feaaef3aca5f143e003af6efe359f2f14e4044eca3aa637c62a407d5869a8a58"
+    if Hardware::CPU.intel?
+      url "https://github.com/polycrate/polycrate/releases/download/v0.7.5/polycrate_0.7.5_linux_amd64.tar.gz"
+      sha256 "c3fe6dacdc2aee5d51ba95c8539957aa805348544548a6ebecd2048bc72b3314"
 
       def install
         bin.install "polycrate"
